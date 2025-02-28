@@ -7,7 +7,7 @@ const Section = () => {
     <div className="p-5">
       {/* Image Section - Stacked on Mobile, Side-by-Side on Larger Screens */}
       <div className="Section flex flex-col md:flex-row items-center gap-1">
-        <span className="image-1">
+        <span className="image-1 ">
           <img src="/Fotor.jpg" alt="First" className="w-full object-cover " />
         </span>
         <span className="image-2">
