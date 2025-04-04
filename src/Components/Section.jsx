@@ -5,7 +5,7 @@ const products = [
   { id: 1, name: "Product 1", price: "₦40,000", img: "/Pic 4.jpg" },
   { id: 2, name: "Product 2", price: "₦40,000", img: "/Pic 7.jpg" },
   { id: 3, name: "Product 3", price: "₦40,000", img: "/Pic 6.jpg" },
-  { id: 4, name: "Product 4", price: "₦40,000", img: "/White.jpg" }
+  { id: 4, name: "Product 4", price: "₦40,000", img: "/Pic 9.jpg" }
 ];
 
 const Section = () => {
@@ -27,7 +27,7 @@ const Section = () => {
             {products.map((product) => (
               <div
                 key={product.id}
-                className="min-w-[75vw] sm:min-w-[50vw] flex-shrink-0 snap-start bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+                className="min-w-[75vw] sm:min-w-[45vw] flex-shrink-0 snap-start bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="aspect-square bg-gray-100 overflow-hidden">
                   <img
