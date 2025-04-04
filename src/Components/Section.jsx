@@ -1,57 +1,53 @@
 import React from 'react';
 
+const products = [
+  { id: 1,  price: "₦40,000", img: "/Pic 1.jpg" },
+  { id: 2,  price: "₦40,000", img: "/Pic 2.jpg" },
+  { id: 3,  price: "₦40,000", img: "/Pic 3.jpg" },
+  { id: 4,  price: "₦40,000", img: "/Pic 5.jpg" }
+];
+
 const Section = () => {
   return (
     <div className="container mx-auto px-4">
-      <div className="products">
+      {/* Product Category */}
+      <div className="products text-center">
         <ul className="product-type flex gap-8 justify-center mt-4">
           <li className="cursor-pointer hover:text-gray-600 font-bold">DEBUT COLLECTION</li>
         </ul>
       </div>
 
-      <div className="product-display grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-8">
-        <div className="product">
-          <img className="w-full h-auto object-cover" src="/Pic 1.jpg" alt="Ace T-shirt" />
-          <div className="product-info mt-2">
-            <p className="font-bold">Ace T-shirt</p>
-            <p className="font-bold">₦40,000</p>
-            <button className="mt-2 bg-black text-white py-2 px-4 w-full hover:bg-gray-800 transition-colors">
-              Select options
-            </button>
-          </div>
+      {/* Product Display */}
+      <div className="mt-8">
+        {/* Mobile: Horizontal Scrollable Cards */}
+        <div className="flex overflow-x-auto gap-4 sm:hidden">
+          {products.map(product => (
+            <div key={product.id} className="min-w-[70%] flex-shrink-0 bg-white shadow-md rounded-lg p-4">
+              <img className="w-full h-60 object-cover rounded-lg" src={product.img} alt={product.name} />
+              <div className="product-info mt-2 text-center">
+                <p className="font-bold">{product.price}</p>
+                <button className="mt-2 bg-black text-white py-2 px-4 w-full hover:bg-gray-800 transition-colors">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
-        
-        <div className="product">
-          <img className="w-full h-auto object-cover" src="/Pic 2.jpg" alt="Ace courageous T-shirt" />
-          <div className="product-info mt-2">
-            <p className="font-bold">Ace courageous T-shirt</p>
-            <p className="font-bold">₦40,000</p>
-            <button className="mt-2 bg-black text-white py-2 px-4 w-full hover:bg-gray-800 transition-colors">
-              Select options
-            </button>
-          </div>
-        </div>
-        
-        <div className="product">
-          <img className="w-full h-auto object-cover" src="/Pic 3.jpg" alt="Ace Armless T-shirt" />
-          <div className="product-info mt-2">
-            <p className="font-bold">Ace Armless T-shirt</p>
-            <p className="font-bold">₦40,000</p>
-            <button className="mt-2 bg-black text-white py-2 px-4 w-full hover:bg-gray-800 transition-colors">
-              Select options
-            </button>
-          </div>
-        </div>
-        
-        <div className="product">
-          <img className="w-full h-auto object-cover" src="/Pic 5.jpg" alt="Ace courageous T-shirt" />
-          <div className="product-info mt-2">
-            <p className="font-bold">Ace courageous T-shirt</p>
-            <p className="font-bold">₦40,000</p>
-            <button className="mt-2 bg-black text-white py-2 px-4 w-full hover:bg-gray-800 transition-colors">
-              Select options
-            </button>
-          </div>
+
+        {/* Desktop: Grid Layout */}
+        <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          {products.map(product => (
+            <div key={product.id} className="product">
+              <img className="w-full h-auto object-cover" src={product.img} alt={product.name} />
+              <div className="product-info mt-2">
+                <p className="font-bold">{product.name}</p>
+                <p className="font-bold">{product.price}</p>
+                <button className="mt-2 bg-black text-white py-2 px-4 w-full hover:bg-gray-800 transition-colors">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
