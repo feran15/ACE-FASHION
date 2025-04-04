@@ -2,36 +2,44 @@ import React, { useContext } from "react";
 import { CartContext } from "../Components/CartContext";
 
 const products = [
-  { id: 1,  price: "₦40,000", img: "/Pic 1.jpg" },
-  { id: 2,  price: "₦40,000", img: "/Pic 2.jpg" },
-  { id: 3,  price: "₦40,000", img: "/Pic 3.jpg" },
-  { id: 4,  price: "₦40,000", img: "/Pic 5.jpg" }
+  { id: 1, name: "Product 1", price: "₦40,000", img: "/Pic 1.jpg" },
+  { id: 2, name: "Product 2", price: "₦40,000", img: "/Pic 2.jpg" },
+  { id: 3, name: "Product 3", price: "₦40,000", img: "/Pic 3.jpg" },
+  { id: 4, name: "Product 4", price: "₦40,000", img: "/Pic 5.jpg" }
 ];
 
 const Products = () => {
   const { addToCart } = useContext(CartContext);
 
   return (
-    <div className="product-display grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-8">
-      {products.map((product) => (
-        <div key={product.id} className="product">
-          <img
-            className="w-full h-60 object-cover rounded-lg" // Make images same width & height
-            src={product.img}
-            alt={product.name}
-          />
-          <div className="product-info mt-2">
-            <p className="font-bold">{product.name}</p>
-            <p className="font-bold">{product.price}</p>
-            <button
-              onClick={() => addToCart(product)}
-              className="mt-2 bg-black text-white py-2 px-4 w-full hover:bg-gray-800 transition-colors cursor-pointer"
-            >
-              Add to Cart
-            </button>
+    <div className="px-4 sm:px-6 lg:px-8 py-8">
+      <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {products.map((product) => (
+          <div 
+            key={product.id} 
+            className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+          >
+            <div className="aspect-w-1 aspect-h-1 w-full">
+              <img
+                className="w-full h-48 sm:h-56 md:h-60 object-cover"
+                src={product.img}
+                alt={product.name}
+                loading="lazy"
+              />
+            </div>
+            <div className="p-4">
+              <h3 className="font-semibold text-lg mb-1 line-clamp-2">{product.name}</h3>
+              <p className="text-gray-800 font-bold mb-3">{product.price}</p>
+              <button
+                onClick={() => addToCart(product)}
+                className="w-full bg-black text-white py-2 px-4 rounded hover:bg-gray-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50"
+              >
+                Add to Cart
+              </button>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

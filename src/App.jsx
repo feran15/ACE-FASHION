@@ -1,20 +1,36 @@
-import React from 'react'
-import Nav from './Components/Nav'
- import Section from './Components/Section'
- import Products from './Components/Products'
- import Footer from './Components/Footer'
-import { CartProvider } from './Components/CartContext'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Nav from './Components/Nav';
+import Section from './Components/Section';
+import Products from './Components/Products';
+import Footer from './Components/Footer';
+import Checkout from './Components/Checkout';
+// import OrderConfirmation from './Components/OrderConfirmation';
+import { CartProvider } from './Components/CartContext';
+
 function App() {
   return (
-    <div>
+    <Router>
       <CartProvider>
-      <Nav/>
-      <Section/>
-       <Products/>
-      <Footer/> 
+        <div className="min-h-screen flex flex-col">
+          <Nav />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={
+                <>
+                  <Section />
+                  <Products />
+                </>
+              } />
+              <Route path="/checkout" element={<Checkout />} />
+              {/* <Route path="/order-confirmation" element={<OrderConfirmation />} /> */}
+            </Routes>
+          </main>
+          <Footer />
+        </div>
       </CartProvider>
-    </div>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;
