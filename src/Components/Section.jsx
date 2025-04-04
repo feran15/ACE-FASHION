@@ -1,19 +1,18 @@
 import React, { useContext } from "react";
 import { CartContext } from "../Components/CartContext";
 
-// Product Data
 const products = [
-  { id: 1, name: "Ace T-shirt", price: "₦40,000", img: "/Pic 5.jpg" },
-  { id: 2, name: "Ace Courageous T-shirt", price: "₦40,000", img: "/Pic 6.jpg" },
-  { id: 3, name: "Ace Armless T-shirt", price: "₦40,000", img: "/Pic 8.jpg" },
-  { id: 4, name: "Ace Cap", price: "₦40,000", img: "/White.jpg" }
+  { id: 1, name: "Ace T-shirt", price: "₦40,000", img: "/Pic 1.jpg" },
+  { id: 2, name: "Ace Courageous T-shirt", price: "₦40,000", img: "/Pic 2.jpg" },
+  { id: 3, name: "Ace Armless T-shirt", price: "₦40,000", img: "/Pic 3.jpg" },
+  { id: 4, name: "Ace Cap", price: "₦40,000", img: "/Pic 5.jpg" }
 ];
 
 const Section = () => {
   const { addToCart } = useContext(CartContext);
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto px-4 overflow-hidden">
       {/* Product Category */}
       <div className="products text-center">
         <ul className="product-type flex gap-8 justify-center mt-4">
@@ -39,7 +38,7 @@ const Section = () => {
                 <p className="font-bold">{product.name}</p>
                 <p className="font-bold">{product.price}</p>
                 <button
-                  onClick={() => addToCart(product)} // Add product to cart
+                  onClick={() => addToCart(product)}
                   className="mt-2 bg-black text-white py-2 px-4 w-full hover:bg-gray-800 transition-colors cursor-pointer"
                 >
                   Add to Cart
@@ -62,7 +61,7 @@ const Section = () => {
                 <p className="font-bold">{product.name}</p>
                 <p className="font-bold">{product.price}</p>
                 <button
-                  onClick={() => addToCart(product)} // Add product to cart
+                  onClick={() => addToCart(product)}
                   className="mt-2 bg-black text-white py-2 px-4 w-full hover:bg-gray-800 transition-colors cursor-pointer"
                 >
                   Add to Cart
