@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import { CartContext } from "../Components/CartContext";
 
 const products = [
-  { id: 1, name: "Product 1", price: "₦40,000", img: "/Red.jpg" },
-  { id: 2, name: "Product 2", price: "₦40,000", img: "/Gray.jpg" },
-  { id: 3, name: "Product 3", price: "₦40,000", img: "/White.jpg" },
-  { id: 4, name: "Product 4", price: "₦40,000", img: "/Black.jpg" }
+  { id: 1, name: "ACE RED ARMLESS T-SHIRT", price: "₦40,000", img: "/Red.jpg" },
+  { id: 2, name: "ACE BLACK T-SHIRT", price: "₦40,000", img: "/Gray.jpg" },
+  { id: 3, name: "ACE WHITE ARMLESS T-SHIRT", price: "₦40,000", img: "/White.jpg" },
+  { id: 4, name: "ACE BLACK ARMLESS T-SHIRT", price: "₦40,000", img: "/Black.jpg" }
 ];
 
 const Section = () => {
