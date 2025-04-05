@@ -13,7 +13,9 @@ const Nav = () => {
   const handleCheckoutClick = () => {
     navigate('/checkout');
   };
-
+    const BacktoPage = () => {
+      navigate('/')
+    }
   return (
     <nav className="px-4 py-4 bg-gray-100 shadow-sm">
       <div className="container mx-auto">
@@ -21,6 +23,7 @@ const Nav = () => {
           {/* Logo */}
           <div className="flex items-center gap-8">
             <img 
+            onClick={BacktoPage}
               className="w-40 h-auto" 
               src="/Ace Logo.png" 
               alt="Ace Logo" 
