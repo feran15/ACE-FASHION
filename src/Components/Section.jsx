@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import { CartContext } from "../Components/CartContext";
 
 const products = [
-  { id: 1, name: "Product 1", price: "₦40,000", img: "/Pic 4.jpg" },
-  { id: 2, name: "Product 2", price: "₦40,000", img: "/Pic 7.jpg" },
-  { id: 3, name: "Product 3", price: "₦40,000", img: "/Pic 6.jpg" },
-  { id: 4, name: "Product 4", price: "₦40,000", img: "/Pic 9.jpg" }
+  { id: 1, name: "Product 1", price: "₦40,000", img: "/Red.jpg" },
+  { id: 2, name: "Product 2", price: "₦40,000", img: "/Gray.jpg" },
+  { id: 3, name: "Product 3", price: "₦40,000", img: "/White.jpg" },
+  { id: 4, name: "Product 4", price: "₦40,000", img: "/Black.jpg" }
 ];
 
 const Section = () => {
@@ -23,7 +23,7 @@ const Section = () => {
       <div className="relative">
         {/* Mobile: Horizontal Scrollable Cards */}
         <div className="sm:hidden pb-4 -mx-4 px-4">
-          <div className="flex overflow-x-auto gap-4 snap-x snap-mandatory scrollbar-hide">
+          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {products.map((product) => (
               <div
                 key={product.id}
