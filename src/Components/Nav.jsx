@@ -4,7 +4,6 @@ import { FaSearch } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CartContext } from './CartContext';
 import { useNavigate } from 'react-router-dom';
-
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { cart } = useContext(CartContext);
@@ -15,6 +14,9 @@ const Nav = () => {
   };
     const BacktoPage = () => {
       navigate('/')
+    }
+    const Lookout = () => {
+      navigate('/Lookout')
     }
   return (
     <nav className="px-4 py-4 bg-gray-100 shadow-sm">
@@ -32,6 +34,12 @@ const Nav = () => {
 
           {/* Desktop Navigation Items - Hidden on mobile */}
           <div className="hidden sm:flex items-center space-x-6">
+            <ul className="nav-list">
+              <li 
+              className="nav-item font-bold hover:text-gray-500 cursor-pointer"
+              onClick={Lookout}
+              >LOOKOUT COLLECTION</li>
+            </ul>
             {/* Search bar */}
             <div className="relative">
               <input
@@ -54,7 +62,7 @@ const Nav = () => {
             </div>
 
             {/* Login */}
-            <button className="hover:text-blue-600">Login</button>
+            <button className="hover:text-blue-600 cursor-pointer">Login</button>
 
             {/* Cart Icon with count */}
             <div className="relative">
@@ -82,7 +90,7 @@ const Nav = () => {
                 className="hover:text-blue-600"
                 aria-label="Shopping Cart"
               >
-                <CiShoppingCart className="text-2xl" />
+                <CiShoppingCart className="text-4xl" />
                 {cart.length > 0 && (
                   <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                     {cart.length}
@@ -116,6 +124,13 @@ const Nav = () => {
               />
               <FaSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             </div>
+              {/* List Menu */}
+              <ul className="nav-list">
+              <li 
+              className="nav-item font-bold hover:text-gray-500 cursor-pointer text-center"
+              onClick={Lookout}
+              >LOOKOUT COLLECTION</li>
+            </ul>
 
             {/* Currency */}
             <div className="flex items-center justify-center gap-2">
@@ -132,7 +147,7 @@ const Nav = () => {
               className="block text-center py-2 hover:text-blue-600 w-full"
               onClick={() => setMenuOpen(false)}
             >
-              Login
+              LOGIN
             </button>
           </div>
         )}

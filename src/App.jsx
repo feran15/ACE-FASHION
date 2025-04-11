@@ -7,7 +7,7 @@ import Footer from './Components/Footer';
 import Checkout from './Components/Checkout';
 // import OrderConfirmation from './Components/OrderConfirmation';
 import { CartProvider } from './Components/CartContext';
-
+import Lookout from './Components/Lookout'
 function App() {
   return (
     <Router>
@@ -19,10 +19,11 @@ function App() {
               <Route path="/" element={
                 <>
                   <Section />
-                  <Products />
+                  {/* <Products /> */}
                 </>
               } />
               <Route path="/checkout" element={<Checkout />} />
+              <Route  path="/Lookout" element={ <Lookout />} />
               {/* <Route path="/order-confirmation" element={<OrderConfirmation />} /> */}
             </Routes>
           </main>

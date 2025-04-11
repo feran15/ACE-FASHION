@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import { CartContext } from "../Components/CartContext";
 
 const products = [
-  { id: 1,  price: "₦40,000", img: "/Pic 1.jpg" },
-  { id: 3,  price: "₦40,000", img: "/Pic 3.jpg" },
-  { id: 2, price: "₦40,000", img: "/Pic 2.jpg" },
-  { id: 4,  price: "₦40,000", img: "/Pic 5.jpg" }
+  { id: 1,  price: "₦50,000", img: "/Long.jpg" },
+  { id: 3,  price: "₦50,000", img: "/Jacket.jpg" },
+  { id: 2, price: "₦50,000", img: "/Tops.jpg" },
+  { id: 4,  price: "₦50,000", img: "/JOG.jpg" }
 ];
 
 const Products = () => {

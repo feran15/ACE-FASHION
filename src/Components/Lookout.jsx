@@ -1,22 +1,25 @@
 import React, { useContext } from "react";
-import { CartContext } from "../Components/CartContext";
+// import { CartContext } from "../Components/CartContext";
 
 const products = [
-  { id: 1, name: "ACE RED TINK TOP", price: "₦35,000", img: "/Red.jpg" },
-  { id: 2, name: "ACE BLACK T-SHIRT", price: "₦50,000", img: "/Gray.jpg" },
-  { id: 3, name: "ACE WHITE ARMLESS TINK TOP", price: "₦35,000", img: "/White.jpg" },
-  { id: 4, name: "ACE BLACK ARMLESS TINK TOP", price: "₦35,000", img: "/Black.jpg" }
+  { id: 1,  img: "/Ace Cards.jpg" },
+  { id: 2,  img: "/Team.jpg" },
+  { id: 3,  img: "/Length.jpg" },
+  { id: 4,  img: "/IMG.jpg" },
+  { id: 5,  img: "/Cell.jpg" },
+  {id:6,    img:"/Bags.jpg"},
+  {id:7,    img:"/Ace 001.jpg"}
 ];
 
-const Section = () => {
-  const { addToCart } = useContext(CartContext);
+const Lookout = () => {
+  // const { addToCart } = useContext(CartContext);
 
   return (
     <section className="container mx-auto px-4 sm:px-6 py-8">
       {/* Product Category Header */}
       <div className="text-center mb-8">
-        <h2 className="text-2xl font-bold mb-2">DEBUT COLLECTION</h2>
-        <div className="w-20 h-1 bg-black mx-auto"></div>
+        <h4 className="font-bold text-3xl">LOOKOUT COLLECTION</h4>
+        <div className="w-20 h-1 bg-black mx-auto mt-3"></div>
       </div>
 
       {/* Product Display */}
@@ -27,7 +30,7 @@ const Section = () => {
             {products.map((product) => (
               <div
                 key={product.id}
-                className="min-w-[75vw] sm:min-w-[45vw] flex-shrink-0 snap-start bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+                className="min-w-[75vw] sm:min-w-[45vw] flex-shrink-0 snap-start bg-white shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="aspect-square bg-gray-100 overflow-hidden">
                   <img
@@ -41,7 +44,7 @@ const Section = () => {
                     }}
                   />
                 </div>
-                <div className="p-4 text-center">
+                {/* <div className="p-4 text-center">
                   <h3 className="font-semibold text-lg mb-1">{product.name}</h3>
                   <p className="text-gray-800 font-bold mb-3">{product.price}</p>
                   <button
@@ -50,7 +53,7 @@ const Section = () => {
                   >
                     Add to Cart
                   </button>
-                </div>
+                </div> */}
               </div>
             ))}
           </div>
@@ -61,7 +64,7 @@ const Section = () => {
           {products.map((product) => (
             <div 
               key={product.id} 
-              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+              className="bg-white  shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
               <div className="aspect-square bg-gray-100 overflow-hidden">
                 <img
@@ -75,7 +78,7 @@ const Section = () => {
                   }}
                 />
               </div>
-              <div className="p-4 text-center">
+              {/* <div className="p-4 text-center">
                 <h3 className="font-semibold text-lg mb-1">{product.name}</h3>
                 <p className="text-gray-800 font-bold mb-3">{product.price}</p>
                 <button
@@ -84,7 +87,7 @@ const Section = () => {
                 >
                   Add to Cart
                 </button>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>
@@ -93,4 +96,4 @@ const Section = () => {
   );
 };
 
-export default Section;
+export default Lookout;
