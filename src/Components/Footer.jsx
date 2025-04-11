@@ -2,6 +2,9 @@ import React from 'react';
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
+  const Whatsapp = () => {
+    const phoneNumber ="+2349153080925"
+  }
   return (
     <footer className="bg-gray-900 text-white py-8 mt-4">
       <div className="container mx-auto px-4">
@@ -16,8 +19,8 @@ const Footer = () => {
           </div>
           {/* Social Media Links (Positioned Opposite to Company Description) */}
           <div className="flex justify-center md:justify-end gap-6">
-            <a href="#" className="text-gray-400 hover:text-white transition text-2xl"><FaFacebookF /></a>
-            <a href="#" className="text-gray-400 hover:text-white transition text-2xl"><FaWhatsapp /></a>
+            <a href="" className="text-gray-400 hover:text-white transition text-2xl"><FaFacebookF /></a>
+            <a href={`https://wa.me/${+2349153080925}`} className="text-gray-400 hover:text-white transition text-2xl"><FaWhatsapp /></a>
             <a href="#" className="text-gray-400 hover:text-white transition text-2xl"><FaInstagram /></a>
           </div>
           
